@@ -4,73 +4,7 @@ import java.util.Scanner;
 
 public class main {
 
-    /*static ArrayList<Employee> EmployeeID = new ArrayList<>();
 
-    public static void addEmployee(String id,String name,Double salary)
-    {
-        Employee add=new Employee(id,name,salary);
-        EmployeeID.add(add);
-
-    }
-
-    public static void EmployeeAddOption()
-    {
-
-        String option="N";
-        Scanner in =new Scanner(System.in);
-
-
-
-
-
-            System.out.println("Enter Employee ID");
-            String id = in.nextLine();
-
-            System.out.println("Enter Employee Name");
-            String name = in.nextLine();
-
-            System.out.println("Enter Employee Salary");
-            Double salary = in.nextDouble();
-            addEmployee(id, name, salary);
-            in.nextLine();
-            System.out.println("Do you want to add more (Y or N)");
-            option=in.nextLine();
-            if (option.equals("Y"))
-            {
-                EmployeeAddOption();
-            }
-            else {
-                return;
-            }
-
-
-        in.close();
-    } */
-
-    /*public static void employeeSearch(String Employee)
-    {
-
-        for(Employee list: EmployeeID) {
-
-            if (Employee.equals(list.getID())) {
-                System.out.println("Employee Exists ! We found it !!");
-                System.out.println("ID : "+list.getID()+" name : "+list.getName()+" Salary : "+list.getSalary());
-            }
-
-        }
-
-    }
-
-    public static void AllemployeeDisplay()
-    {
-        for (Employee list : EmployeeID)
-        {
-            System.out.println("All Employee Display");
-            System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary());
-
-
-        }
-    }*/
 
 
 
