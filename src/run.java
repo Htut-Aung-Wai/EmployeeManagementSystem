@@ -1,8 +1,7 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class main {
+public class run {
 
 
 
@@ -17,7 +16,7 @@ public class main {
             System.out.print("Enter Employee ID");
             String employeeID = in.nextLine();
 
-            System.out.println("Enter your option");
+            System.out.println("Enter your option\n1:Add\n2:Search\n3:Display\n4:Salary Update\n5:Bonus Calculate1");
             int inputoption = in.nextInt();
             switch (inputoption) {
 
@@ -62,6 +61,7 @@ public class main {
             System.out.println("Do you want to continue (Y or N)");
             in.nextLine();
             option=in.nextLine();
+
         }
 
 
