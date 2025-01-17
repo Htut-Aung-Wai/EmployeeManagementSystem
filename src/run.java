@@ -13,8 +13,6 @@ public class run {
 
         while (!option.equals("N")) {
             EmployeeService employeeServiceVar=new EmployeeService();
-            System.out.print("Enter Employee ID : ");
-            String employeeID = in.nextLine();
 
             System.out.println("Enter your option\n1:Add\n2:Search\n3:Display\n4:Salary Update\n5:Bonus Calculate");
             int inputOption = in.nextInt();
@@ -40,17 +38,21 @@ public class run {
                     break;
                 }
                 case 4:{
+                    System.out.print("Enter Employee ID to update salary : ");
+                    String employeeIdUpdateSalary = in.nextLine();
                     System.out.println("Enter Update Salary");
                     double salary=in.nextDouble();
                     in.nextLine();
-                    employeeServiceVar.EmployeeSalaryUpdate(employeeID,salary);
+                    employeeServiceVar.EmployeeSalaryUpdate(employeeIdUpdateSalary,salary);
                     break;
                 }
                 case 5:{
+                    System.out.print("Enter Employee ID : ");
+                    String employeeIdSalaryPercent = in.nextLine();
                     System.out.println("Enter bonus percent");
                     int bonusPercent=in.nextInt();
                     in.nextLine();
-                    employeeServiceVar.CalculateSalaryPercent(employeeID,bonusPercent);
+                    employeeServiceVar.CalculateSalaryPercent(employeeIdSalaryPercent,bonusPercent);
                     break;
                 }
 

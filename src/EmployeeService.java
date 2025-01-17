@@ -13,7 +13,7 @@ public class EmployeeService {
     }
 
     public void EmployeeAddOption() {
-        boolean exist=false;
+
         String option = "N";
         Scanner in = new Scanner(System.in);
 
@@ -21,6 +21,18 @@ public class EmployeeService {
 
         System.out.println("Enter Employee ID");
         String id = in.nextLine();
+
+        for (Employee list : employeeList) {
+            if(list.getID().equals(id))
+            {
+                System.out.println("Employee Id Exists ,You should try another ID ;");
+                EmployeeAddOption();
+            }
+
+
+
+
+        }
 
         System.out.println("Enter Employee Name");
         String name = in.nextLine();
