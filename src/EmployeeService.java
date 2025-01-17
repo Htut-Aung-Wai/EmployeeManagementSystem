@@ -13,9 +13,10 @@ public class EmployeeService {
     }
 
     public void EmployeeAddOption() {
-
+        boolean exist=false;
         String option = "N";
         Scanner in = new Scanner(System.in);
+
 
 
         System.out.println("Enter Employee ID");
@@ -26,8 +27,9 @@ public class EmployeeService {
 
         System.out.println("Enter Employee Salary");
         Double salary = in.nextDouble();
-        AddEmployee(id, name, salary);
         in.nextLine();
+        AddEmployee(id, name, salary);
+
         System.out.println("Do you want to add more (Y or N)");
         option = in.nextLine();
         if (option.equals("Y")) {
@@ -59,10 +61,11 @@ public class EmployeeService {
     public void AllEmployeeDisplay() {
         System.out.println("All Employee Display");
         for (Employee list : employeeList) {
-            if(!list.getID().isEmpty() && list.getID()!=null && list.getName() != null && !list.getName().isEmpty())
-            {System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary()+"\n");}
-            else
+            if(list.getID() == null && list.getID().isEmpty())
             {System.out.println("There is no Employee in database\n");}
+            else
+            {System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary()+"\n");}
+
 
 
         }
@@ -74,6 +77,7 @@ public class EmployeeService {
             if (employeeId.equals(list.getID())) {
                 list.UpdateSalary(salary);
                 System.out.println(list.getName() + " 's Salary Updated to " + salary);
+                break;
             } else {
 
                 System.out.println("Employee not found !!");

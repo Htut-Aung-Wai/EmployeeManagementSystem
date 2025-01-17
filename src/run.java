@@ -18,6 +18,7 @@ public class run {
 
             System.out.println("Enter your option\n1:Add\n2:Search\n3:Display\n4:Salary Update\n5:Bonus Calculate");
             int inputOption = in.nextInt();
+            in.nextLine();
             switch (inputOption) {
 
                 case 1: {
@@ -27,8 +28,9 @@ public class run {
                 }
 
                 case 2:{
-
-                    employeeServiceVar.EmployeeSearch(employeeID);
+                    System.out.println("Enter Employee ID to search : ");
+                    String employeeIdSearch=in.nextLine();
+                    employeeServiceVar.EmployeeSearch(employeeIdSearch);
                     break;
                 }
 
@@ -40,12 +42,14 @@ public class run {
                 case 4:{
                     System.out.println("Enter Update Salary");
                     double salary=in.nextDouble();
+                    in.nextLine();
                     employeeServiceVar.EmployeeSalaryUpdate(employeeID,salary);
                     break;
                 }
                 case 5:{
                     System.out.println("Enter bonus percent");
                     int bonusPercent=in.nextInt();
+                    in.nextLine();
                     employeeServiceVar.CalculateSalaryPercent(employeeID,bonusPercent);
                     break;
                 }
@@ -59,7 +63,7 @@ public class run {
 
 
             System.out.println("Do you want to continue (Y or N)");
-            in.nextLine();
+
             option=in.nextLine();
 
         }
