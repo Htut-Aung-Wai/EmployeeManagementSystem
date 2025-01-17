@@ -12,8 +12,8 @@ public class Employee {
             this.salary=salary;
     }
 
-    public void setID(String idinput) {
-        this.id = idinput;
+    public void setID(String idInput) {
+        this.id = idInput;
 
     }
 
@@ -40,13 +40,9 @@ public class Employee {
         this.salary=update_salary;
     }
 
-    public double CalculateBonus(double percent)
-    {
-
-        return this.salary*percent/100;
-    }
 
 
-;
+
+
 
 }

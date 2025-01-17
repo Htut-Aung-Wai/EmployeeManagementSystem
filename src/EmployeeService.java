@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class EmployeeService {
 
 
-    static ArrayList<Employee> EmployeeID = new ArrayList<>();
+    static ArrayList<Employee> employeeList = new ArrayList<>();
 
-    public void addEmployee(String id, String name, Double salary) {
+    public void AddEmployee(String id, String name, Double salary) {
         Employee add = new Employee(id, name, salary);
-        EmployeeID.add(add);
+        employeeList.add(add);
 
     }
 
@@ -26,7 +26,7 @@ public class EmployeeService {
 
         System.out.println("Enter Employee Salary");
         Double salary = in.nextDouble();
-        addEmployee(id, name, salary);
+        AddEmployee(id, name, salary);
         in.nextLine();
         System.out.println("Do you want to add more (Y or N)");
         option = in.nextLine();
@@ -40,35 +40,38 @@ public class EmployeeService {
         //in.close();
     }
 
-    public void employeeSearch(String Employee) {
+    public void EmployeeSearch(String Employee) {
 
-        for (Employee list : EmployeeID) {
+        for (Employee list : employeeList) {
 
-            if (Employee.equals(list.getID())) {
+            if (list.getID().equals(Employee)) {
                 System.out.println("Employee Exists ! We found it !!");
                 System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary());
+                break;
             } else {
                 System.out.println("Employee not Found !!");
             }
 
-
         }
 
     }
 
-    public void AllemployeeDisplay() {
-        for (Employee list : EmployeeID) {
-            System.out.println("All Employee Display");
-            System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary());
+    public void AllEmployeeDisplay() {
+        System.out.println("All Employee Display");
+        for (Employee list : employeeList) {
+            if(!list.getID().isEmpty() && list.getID()!=null && list.getName() != null && !list.getName().isEmpty())
+            {System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary()+"\n");}
+            else
+            {System.out.println("There is no Employee in database\n");}
 
 
         }
     }
 
-    public void employeeSalaryUpdate(String employeeid, double salary) {
-        for (Employee list : EmployeeID) {
+    public void EmployeeSalaryUpdate(String employeeId, double salary) {
+        for (Employee list : employeeList) {
 
-            if (employeeid.equals(list.getID())) {
+            if (employeeId.equals(list.getID())) {
                 list.UpdateSalary(salary);
                 System.out.println(list.getName() + " 's Salary Updated to " + salary);
             } else {
@@ -82,13 +85,14 @@ public class EmployeeService {
 
     }
 
-    public void calculateSalaryPercent(String id, int percent) {
+    public void CalculateSalaryPercent(String id, int percent) {
 
-        for (Employee list : EmployeeID) {
+        for (Employee list : employeeList) {
 
             if (id.equals(list.getID())) {
-                double bonus = list.CalculateBonus(percent);
+                double bonus = list.getSalary()*percent/100;
                 System.out.println(list.getName() + " 's Bonus is " + bonus);
+                break;
             }
             else{
                 System.out.println("Employee not found or Input is wrong");
@@ -98,5 +102,7 @@ public class EmployeeService {
 
 
     }
+
+
 
 }
