@@ -61,12 +61,11 @@ public class EmployeeService {
             if (list.getID().equals(Employee)) {
                 System.out.println("Employee Exists ! We found it !!");
                 System.out.println("ID : " + list.getID() + " name : " + list.getName() + " Salary : " + list.getSalary());
-                break;
-            } else {
-                System.out.println("Employee not Found !!");
+                return;
             }
 
         }
+        System.out.println("Employee not Found !!");
 
     }
 
@@ -81,6 +80,7 @@ public class EmployeeService {
 
 
         }
+        System.out.println("Employee not Found !!");
     }
 
     public void EmployeeSalaryUpdate(String employeeId, double salary) {
@@ -89,15 +89,12 @@ public class EmployeeService {
             if (employeeId.equals(list.getID())) {
                 list.UpdateSalary(salary);
                 System.out.println(list.getName() + " 's Salary Updated to " + salary);
-                break;
-            } else {
-
-                System.out.println("Employee not found !!");
-
+                return;
             }
 
 
         }
+        System.out.println("Employee not Found !!");
 
     }
 
@@ -108,13 +105,12 @@ public class EmployeeService {
             if (id.equals(list.getID())) {
                 double bonus = list.getSalary()*percent/100;
                 System.out.println(list.getName() + " 's Bonus is " + bonus);
-                break;
-            }
-            else{
-                System.out.println("Employee not found or Input is wrong");
+                return;
             }
 
         }
+
+        System.out.println("Employee not found or Input is wrong");
 
 
     }
